@@ -1,4 +1,4 @@
-package practica_1;
+package practica_1A;
 
 public class AplicacionDePrueba {
 
