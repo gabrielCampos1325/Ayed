@@ -82,12 +82,16 @@ public class ArbolBinario<T> {
 
 	public int contarHojas() {	
 		int aux = 0;
-		if (esHoja()) {
-			aux++;
+		if (this.esHoja()) {
+			return 1;
 		}
-		return aux +
-			   getHijoDerecho().contarHojas() +
-			   getHijoDerecho().contarHojas();
+		if (this.getHijoDerecho() != null) {
+			aux += this.getHijoDerecho().contarHojas();
+		}
+		if (this.getHijoIzquierdo() != null) {
+			aux += this.getHijoIzquierdo().contarHojas();
+		}
+		return aux;
 	}
 	
 
