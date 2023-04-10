@@ -12,9 +12,9 @@ public class TestBalanceo {
 		
 		liValores[0].setElem("()");
 		liValores[1].setElem("[]");
-		liValores[2].setElem("{}");
+		liValores[2].setElem("{}"); 
 		
-		String st = "({[](}))";
+		String st = "((";
 		String c;
 		
 		for (int i = 0; i < st.length(); i++) {

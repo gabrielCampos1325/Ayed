@@ -13,7 +13,7 @@ public class PilaGenerica<T> {
 	}
 	
 	public T desapilar() {
-		T elem = datos.elemento(1);
+		T elem = tope();
 		datos.eliminarEn(1);
 		return elem;
 	}

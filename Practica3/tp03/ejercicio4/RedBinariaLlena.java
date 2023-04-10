@@ -22,7 +22,6 @@ public class RedBinariaLlena {
 			max2 += tiempoMax(a.getHijoDerecho());
 		}
 		
-		return Math.max(max1, max2);	
-		
+		return Math.max(max1, max2);			
 	};
 }
