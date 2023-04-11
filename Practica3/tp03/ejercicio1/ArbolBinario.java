@@ -82,12 +82,16 @@ public class ArbolBinario<T> {
 
 	public int contarHojas() {	
 		int aux = 0;
-		if (esHoja()) {
-			aux++;
+		if (this.esHoja()) {
+			return 1;
 		}
-		return aux +
-			   getHijoDerecho().contarHojas() +
-			   getHijoDerecho().contarHojas();
+		if (tieneHijoDerecho() != null) {
+			aux += this.getHijoDerecho().contarHojas();
+		}
+		if (tieneHijoIzquierdo() != null) {
+			aux += this.getHijoIzquierdo().contarHojas();
+		}
+		return aux;
 	}
 	
 
@@ -123,7 +127,7 @@ public class ArbolBinario<T> {
 			} else if(!cola.esVacia()) {
 				if(nivel <= m) { //esta bien?
 					nivel++;
-				    if(nivel > n && nivel <= m) {
+				    if(nivel > n) {
 						System.out.println("");
 					}
 					cola.encolar(null);
