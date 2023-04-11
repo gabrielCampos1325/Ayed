@@ -8,7 +8,7 @@ public class Solucion {
 	// A
 	public static ListaGenerica<Integer> caminoMasLargo(ArbolBinario<Integer> arbol) {
 		if (arbol == null) {
-			ListaGenerica<Integer> array = new ListaEnlazadaGenerica<Integer>();
+			ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
 			return array;
 		}
 		
