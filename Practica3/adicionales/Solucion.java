@@ -91,7 +91,7 @@ public class Solucion {
 			return new Resultado();
 		}
 		Resultado r1 = caminoMasLargoYMayorValor2(arbol.getHijoIzquierdo());
-		Resultado r1 = caminoMasLargoYMayorValor2(arbol.getHijoDerecho());
+		Resultado r2 = caminoMasLargoYMayorValor2(arbol.getHijoDerecho());
 		Resultado total;
 		
 		if (r1.compareTo(r2) < 0) {
