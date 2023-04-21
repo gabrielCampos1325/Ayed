@@ -139,3 +139,59 @@ public class ArbolBinario<T> {
 	
 
 }
+
+
+	public void printPorNiveles() {
+        ColaGenerica <ArbolBinario<T>> cola = new ColaGenerica<>();
+        ArbolBinario <T> arbol;
+        cola.encolar(this);
+        cola.encolar(null);
+        while(!cola.esVacia()){
+            arbol=cola.desencolar();
+            if(arbol != null){
+                System.out.println(arbol.getDato());
+                if(arbol.tieneHijoIzquierdo())
+                    cola.encolar(arbol.getHijoIzquierdo());
+                if(arbol.tieneHijoDerecho())
+                    cola.encolar(arbol.getHijoDerecho());
+            }else if (!cola.esVacia()){
+                System.out.println();
+                cola.encolar(null);
+            }
+        }
+    }
+    
+    public int sumaElementosProfundidad(int p) {
+    		int total = 0;
+        if(p < 0) { // valor invalido
+          total = Integer.maxInt;
+        }
+        else {
+          int nivelActual = 0;
+          ColaGenerica <ArbolGeneral<T>> cola = new ColaGenerica<ArbolGeneral<T>>();
+          ArbolGeneral <T> arbol;
+          cola.encolar(this.a);
+          cola.encolar(null);
+          while(!cola.esVacia()) {
+              arbol=cola.desencolar();    
+              if(arbol != null) {
+                  if(nivelActual == p) {
+                    total += arbol.getDato();
+                  } else {
+                      ListaGenerica<ArbolGeneral<T>> lHijos = arbol.getHijos();
+                      lHijos.comenzar();
+                      while (!lHijos.fin()) {
+                        cola.encolar(lHijos.proximo());
+                      }
+                  }    
+              } else if(!cola.esVacia()){
+                  nivelActual++;
+                  cola.encolar(null);
+              }
+          }
+          if(p > nivelActual) {
+            total = Integer.minInt;
+          }
+        }
+        return total;
+    }
