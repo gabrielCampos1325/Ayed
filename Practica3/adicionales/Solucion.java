@@ -9,7 +9,7 @@ public class Solucion {
 	public static ListaGenerica<Integer> caminoMasLargo(ArbolBinario<Integer> arbol) {
 		if (arbol == null) {
 			ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
-			return array;
+			return l;
 		}
 		
 		ListaGenerica<Integer> izquierdo = caminoMasLargo(arbol.getHijoIzquierdo());
@@ -72,7 +72,7 @@ public class Solucion {
 		}
 		public void agregar(Integer valor) {
 			total += valor;
-			datos.agregarAlInicio(valor);
+			datos.agregarInicio(valor);
 		}
 		public int compareTo(Resultado otro) {
 			if (this.datos.tamanio() < otro.datos.tamanio()) {
@@ -88,7 +88,7 @@ public class Solucion {
 
 	public static ListaGenerica<Integer> caminoMasLargoYMayorValor2(ArbolBinario<Integer> arbol) {
 		if (arbol == null) {
-			return new Resultado();
+			//return new Resultado();
 		}
 		Resultado r1 = caminoMasLargoYMayorValor2(arbol.getHijoIzquierdo());
 		Resultado r2 = caminoMasLargoYMayorValor2(arbol.getHijoDerecho());

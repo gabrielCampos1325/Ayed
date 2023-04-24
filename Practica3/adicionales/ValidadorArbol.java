@@ -72,7 +72,7 @@ public class ValidadorArbol{
 	    
 	    if (a.esHoja()){ 
 	    	if (camAct.tamanio()>camMasLargo.tamanio()){
-	    		camMasLargo.eliminarTodos();  
+	    		//camMasLargo.eliminarTodos();  
 	    		camAct.comenzar(); 
 	    		while(!camAct.fin())
 	    			camMasLargo.agregarFinal(camAct.proximo());
@@ -99,7 +99,7 @@ public class ValidadorArbol{
 
 		if (a.esHoja()) {
 			if (camAct.tamanio() > camMasLargo.tamanio()) {
-				camMasLargo.eliminarTodos();
+				//camMasLargo.eliminarTodos();
 				camAct.comenzar();
 				while (!camAct.fin())
 					camMasLargo.agregarFinal(camAct.proximo());
@@ -113,7 +113,7 @@ public class ValidadorArbol{
 		
 		camAct.eliminarEn(camAct.tamanio()); // eliminamos cuando el �rbol es hoja y al volver de la recursi�n luego de tratar a los sub�rboles o al sub�rbol que tenga.
 	}
-//Ante igual longitud, devuelve el de mayor peso.
+	//Ante igual longitud, devuelve el de mayor peso.
 	private static int caminoAHojaMasLejanaRec2(ArbolBinario<Integer> a, ListaGenerica<Integer> camAct, 
 			ListaGenerica<Integer> camMasLargo, int sumaAct, int sumaMax){
         		
