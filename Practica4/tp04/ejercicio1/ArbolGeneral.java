@@ -89,6 +89,38 @@ public class ArbolGeneral<T> {
 		return 0;
 	}
 	
+	public Boolean esAncestro(T a, T b) {
+		Boolean esAnc =  false;
+		ArbolGeneral<T> subA = this.subArbol(a);
+		if (!subA.esVacio()) {
+			ArbolGeneral<T> subB = this.subArbol(b);
+			esAnc = !subB.esVacio();
+		}
+		return esAnc;
+	}
+	
+	private ArbolGeneral<T> subArbol (T dato) {
+		ArbolGeneral<T> subA = new ArbolGeneral<T>();
+		
+		if (this.getDato().equals(dato)) {
+			subA = this;
+		} else {
+			if (!this.esHoja()) {
+				ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+				hijos.comenzar();
+				boolean encontrado = false;
+				while (!hijos.fin() & !encontrado) {
+					ArbolGeneral<T> hijo = hijos.proximo();
+					subA = hijo.subArbol(dato);
+					if (!subA.esVacio()) {
+						encontrado = true;
+					}
+				}
+			}
+		}
+		return subA;
+	}
+	
 	public int sumaElementosProfundidad(int p) {
 		int total = 0;
 	    if(p < 0) { // valor invalido
