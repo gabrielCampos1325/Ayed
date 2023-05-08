@@ -21,7 +21,7 @@ public class MandatoBinario {
 		boolean es = true;
 		k = k - ab.getDato();
 		
-		if (k > 0 && !ab.esHoja()) {
+		if (!ab.esHoja()) {
 			
 			if (es && ab.tieneHijoIzquierdo()) {
 				es = esMandato(k, ab.getHijoIzquierdo());
