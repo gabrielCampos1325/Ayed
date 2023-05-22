@@ -38,8 +38,8 @@ public class TestIsTwoTree {
 		raiz.agregarHijoIzquierdo(a7);
 		raiz.agregarHijoDerecho(aMenos5);
 		
-		Parcial_6_5_2023 p = new Parcial_6_5_2023(raiz);	
-		System.out.println(p.isTwoTree(7));		 
+		Parcial_6_5_2023_Correccion p = new Parcial_6_5_2023_Correccion(aMenos3);	
+		System.out.println(p.isTwoTree(-3));		 
 			 
 	}
 

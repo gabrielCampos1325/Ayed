@@ -24,16 +24,16 @@ public class TestCaminosPares {
 	    /*
 	          a
 	      /  /  \  \
-	     b  c   d  e
+	     b  c   d   e
 	     /   \    \
 	    f    g    h
 	     /
 	    I
 	     */
 	    
-	    CaminosPares parcial = new CaminosPares();
+	    CaminosPares2 parcial = new CaminosPares2();
 	    
-	    ListaGenerica<ListaGenerica<Character>> listaResultado = parcial.caminosPares(A);
+	    ListaGenerica<ListaGenerica<Character>> listaResultado = parcial.calcular(A);
 
 	}
 

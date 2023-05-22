@@ -76,8 +76,22 @@ public class ArbolGeneral<T> {
 	
 	public Integer altura() {
 		// Falta implementar..
-		return 0;
-	}
+		
+		int max = 0;
+		
+		if (!this.esHoja()) {
+			if (this.tieneHijos()) {
+				ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
+				hijos.comenzar();
+				while (!hijos.fin()) {
+					max = Math.max(hijos.proximo().altura() + 1, max);					
+				}
+			}
+		}
+		
+		return max;
+	}	
+
 
 	public Integer nivel(T dato) {
 		// falta implementar
@@ -86,6 +100,9 @@ public class ArbolGeneral<T> {
 
 	public Integer ancho() {
 		// Falta implementar..
+		
+		
+		
 		return 0;
 	}
 	
