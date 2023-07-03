@@ -65,6 +65,9 @@ public class Mafias {
 				Vertice<String> verticeAdy = aristaAdy.verticeDestino();
 				
 				if (!visitados[verticeAdy.getPosicion()]) {
+					if (aristaAdy.controlado || verticeAdy.dato().controlado()) {
+						controlado++;
+					}
 					calcular(ciudad, verticeAdy, destino, camAct, camRes, visitados, controlado);
 				} 
 			}
