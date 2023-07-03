@@ -57,15 +57,15 @@ public class Mafias {
 			copiar(camAct, camRes);	
 				
 		} else {
-			ListaGenerica<Arista<String>> aristasAdy = ciudad.listaDeAdyacentes(origen);
+			ListaGenerica<Arista<Boolean>> aristasAdy = ciudad.listaDeAdyacentes(origen);
 			
 			aristasAdy.comenzar();
 			while (!aristasAdy.fin() && camRes.esVacia()) { //controladoMin != 0
-				Arista<String> aristaAdy = aristasAdy.proximo();
+				Arista<Boolean> aristaAdy = aristasAdy.proximo();
 				Vertice<String> verticeAdy = aristaAdy.verticeDestino();
 				
 				if (!visitados[verticeAdy.getPosicion()]) {
-					if (aristaAdy.controlado || verticeAdy.dato().controlado()) {
+					if (aristaAdy.controlado() || verticeAdy.dato().controlado()) {
 						controlado++;
 					}
 					calcular(ciudad, verticeAdy, destino, camAct, camRes, visitados, controlado);
